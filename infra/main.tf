@@ -167,9 +167,9 @@ resource "aws_lambda_function" "ingest" {
 
   environment {
     variables = {
-      SUPPLIER_TABLE_NAME    = aws_dynamodb_table.suppliers.name
-      ALERT_TOPIC_ARN        = aws_sns_topic.alerts.arn
-      REJECT_RATE_THRESHOLD  = var.reject_rate_threshold
+      SUPPLIER_TABLE_NAME   = aws_dynamodb_table.suppliers.name
+      ALERT_TOPIC_ARN       = aws_sns_topic.alerts.arn
+      REJECT_RATE_THRESHOLD = var.reject_rate_threshold
     }
   }
 
