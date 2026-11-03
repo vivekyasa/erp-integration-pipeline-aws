@@ -1,0 +1,6 @@
+supplier_number,supplier_name,source_system,country_code,currency_code,payment_terms_days,lead_time_days,status
+SUP1001,Acme Components,SAP,US,USD,30,14,ACTIVE
+SUP1002,Brightline Metals,EBS_R12,DE,EUR,45,21,ACTIVE
+SUP1003,Harbour Plastics,SAP,GB,GBP,60,30,ACTIVE
+SUP1004,Nordfab Tooling,LEGACY_A,SE,SEK,30,18,INACTIVE
+SUP1005,Pacific Fasteners,EBS_R12,JP,JPY,30,25,ACTIVE

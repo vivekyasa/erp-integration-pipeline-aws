@@ -1,0 +1,11 @@
+supplier_number,supplier_name,source_system,country_code,currency_code,payment_terms_days,lead_time_days,status
+SUP2001,Valid Supplier,SAP,US,USD,30,14,ACTIVE
+,Missing Number,SAP,US,USD,30,14,ACTIVE
+SUP2003,,EBS_R12,DE,EUR,45,21,ACTIVE
+SUP2004,Unknown Source,MYSTERY_SYS,US,USD,30,14,ACTIVE
+SUP2005,Bad Country,SAP,USA,USD,30,14,ACTIVE
+SUP2006,Bad Currency,SAP,US,DOLLAR,30,14,ACTIVE
+SUP2007,Date In Days Field,SAP,US,USD,20260131,14,ACTIVE
+SUP2008,Negative Lead Time,SAP,US,USD,30,-5,ACTIVE
+SUP-2009,Punctuated Number,SAP,US,USD,30,14,ACTIVE
+SUP2010,Unknown Status,SAP,US,USD,30,14,PENDING
