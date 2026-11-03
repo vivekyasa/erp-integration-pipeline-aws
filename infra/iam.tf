@@ -1,9 +1,9 @@
-// Least privilege roles for the pipeline.
-//
-// The ingestion function is granted exactly what it needs and nothing more:
-// read from inbound/, write only to rejects/ and summaries/, write to the
-// supplier table, and publish to the one alert topic. It cannot delete
-// objects, cannot read the whole bucket, and cannot touch any other table.
+# Least privilege roles for the pipeline.
+#
+# The ingestion function is granted exactly what it needs and nothing more:
+# read from inbound/, write only to rejects/ and summaries/, write to the
+# supplier table, and publish to the one alert topic. It cannot delete
+# objects, cannot read the whole bucket, and cannot touch any other table.
 
 data "aws_iam_policy_document" "lambda_assume_role" {
   statement {
@@ -78,13 +78,13 @@ resource "aws_iam_role_policy" "ingest" {
   policy = data.aws_iam_policy_document.ingest.json
 }
 
-// ---------------------------------------------------------------------------
-// Read only role for anyone reviewing the loaded data.
-//
-// This mirrors the owner and reader split used on the database side: the
-// people checking a load can read the records and the reports, and cannot
-// change either.
-// ---------------------------------------------------------------------------
+# ---------------------------------------------------------------------------
+# Read only role for anyone reviewing the loaded data.
+#
+# This mirrors the owner and reader split used on the database side: the
+# people checking a load can read the records and the reports, and cannot
+# change either.
+# ---------------------------------------------------------------------------
 
 data "aws_iam_policy_document" "reader_assume_role" {
   count = var.create_reader_role ? 1 : 0

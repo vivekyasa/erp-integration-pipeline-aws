@@ -47,7 +47,7 @@ jobs:
           terraform_version: "1.9.8"
 
       - name: Check formatting
-        run: terraform -chdir=infra fmt -check -recursive
+        run: terraform -chdir=infra fmt -check -diff -recursive
 
       # No credentials needed: the backend is skipped, so this checks the
       # configuration itself rather than talking to AWS.
