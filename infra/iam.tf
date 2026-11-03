@@ -34,9 +34,9 @@ data "aws_iam_policy_document" "ingest" {
 
   # Write reports back, without any delete permission.
   statement {
-    sid       = "WriteReports"
-    effect    = "Allow"
-    actions   = ["s3:PutObject"]
+    sid     = "WriteReports"
+    effect  = "Allow"
+    actions = ["s3:PutObject"]
     resources = [
       "${aws_s3_bucket.landing.arn}/rejects/*",
       "${aws_s3_bucket.landing.arn}/summaries/*",
@@ -45,8 +45,8 @@ data "aws_iam_policy_document" "ingest" {
 
   # Upsert supplier records. No scan or delete: the function only writes.
   statement {
-    sid     = "WriteSupplierRecords"
-    effect  = "Allow"
+    sid    = "WriteSupplierRecords"
+    effect = "Allow"
     actions = [
       "dynamodb:PutItem",
       "dynamodb:BatchWriteItem",
@@ -62,8 +62,8 @@ data "aws_iam_policy_document" "ingest" {
   }
 
   statement {
-    sid     = "WriteOwnLogs"
-    effect  = "Allow"
+    sid    = "WriteOwnLogs"
+    effect = "Allow"
     actions = [
       "logs:CreateLogStream",
       "logs:PutLogEvents",
@@ -112,8 +112,8 @@ data "aws_iam_policy_document" "reader" {
   count = var.create_reader_role ? 1 : 0
 
   statement {
-    sid     = "ReadReportsAndFiles"
-    effect  = "Allow"
+    sid    = "ReadReportsAndFiles"
+    effect = "Allow"
     actions = [
       "s3:GetObject",
       "s3:ListBucket",
@@ -125,8 +125,8 @@ data "aws_iam_policy_document" "reader" {
   }
 
   statement {
-    sid     = "ReadSupplierRecords"
-    effect  = "Allow"
+    sid    = "ReadSupplierRecords"
+    effect = "Allow"
     actions = [
       "dynamodb:GetItem",
       "dynamodb:Query",
